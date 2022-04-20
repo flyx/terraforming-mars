@@ -9,7 +9,11 @@ Supports:
  * Colonies
  * Sleeved Cards
 
-Build models with `make`. Requires OpenSCAD. Print:
+Build models and PDF (for plates) with `make`.
+Modules require OpenSCAD.
+PDF requires `lualatex`, *tikz* and a generally sensible TeX installation.
+
+Print:
 
  * 5 × plate_left.3mf
  * 5 × plate_right.3mf
