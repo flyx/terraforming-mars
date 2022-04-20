@@ -1,1 +1,6 @@
 out
+*.aux
+*.fls
+*.log
+*.pdf
+*.zip

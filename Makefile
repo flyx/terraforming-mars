@@ -11,7 +11,8 @@ FILES=out/plate_left.3mf \
 			out/projects_cover.3mf \
 			out/prelude_companies.3mf \
 			out/money.3mf \
-			out/brown_hexes.3mf
+			out/brown_hexes.3mf \
+			out/plates.pdf
 
 all: ${FILES}
 
@@ -28,3 +29,7 @@ out/prelude_companies.3mf: modules/cards.scad
 
 out/%.3mf: parts/%.scad out
 	${SCAD} -q -o $@ $<
+
+out/plates.pdf: pdf/plates.tex
+	cd pdf && lualatex plates.tex
+	mv pdf/plates.pdf out/

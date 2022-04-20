@@ -1,0 +1,91 @@
+\documentclass[a4paper]{standalone}
+
+\usepackage[dvipsnames]{xcolor}
+\usepackage{graphicx}
+\usepackage{tikz}
+\usetikzlibrary{matrix}
+\usepackage{fontspec}
+
+\setmainfont{Prototype}[
+  Extension      = .ttf,
+  UprightFont    = *,
+]
+
+\setsansfont{Concourse C7}[
+  SizeFeatures={Size=40}
+]
+
+\begin{document}
+  \begin{tikzpicture}[
+    x=1mm,y=1mm,
+    every node/.style={inner sep=0,outer sep=0},
+    bar/.style={rectangle, rounded corners, minimum width=4cm, minimum height=1cm, fill=white, opacity=0.4, text opacity=1},
+    table/.style={
+      matrix of nodes,
+      row sep=-\pgflinewidth,
+      column sep=-\pgflinewidth,
+      nodes={
+        rectangle,
+        draw=black,
+        align=center,
+        font={\LARGE},
+        minimum height=9mm,
+        minimum width=9mm,
+      },
+      row 3/.style={
+        nodes={
+          font={\Large},
+        }
+      },
+      row 4/.style={
+        nodes={
+          font={\Large},
+        }
+      },
+      nodes in empty cells,
+    }
+  ]
+    \node[anchor=south west] at (0,35) {\includegraphics[height=35mm, trim={0 0 1.8cm 22cm}, clip]{img/paper-texture.jpg}};
+    \node at (42.5, 59) {\includegraphics[height=19mm]{img/megacredit.png}};
+    \node at (42.5, 59) {\textsf{\color{BurntOrange} C}};
+    \draw[line width=1mm, BurntOrange]
+      (38.2, 58.25) -- (43, 58.25)
+      (38.2, 59.75) -- (43, 59.75);
+
+    \node[anchor=south west] at (85,35) {\includegraphics[height=35mm, trim={0 0 0 4.21cm}, clip]{img/steel-texture.jpg}};
+    \node at (115, 59) {\includegraphics[height=19mm]{img/steel.png}};
+    \node[bar, opacity=.5, text opacity=1] at (115, 42) {\textsf{\includegraphics[height=8mm]{img/building.png}\raisebox{1mm}{:}\includegraphics[height=8mm]{img/steel.png}=}\includegraphics[height=8mm]{img/megacredit.png}};
+    \node at (130, 42) {\large 2};
+
+    \node[anchor=south east] at (205, 35) {\includegraphics[height=35mm, trim={0 0 0 2.8cm}, clip]{img/titanium-texture.jpg}};
+    \node at (175, 59) {\includegraphics[height=19mm]{img/titanium.png}};
+    \node[bar] at (175, 42) {\textsf{\includegraphics[height=8mm]{img/space.png}\raisebox{1mm}{:}\includegraphics[height=8mm]{img/titanium.png}=}\includegraphics[height=8mm]{img/megacredit.png}};
+    \node at (190, 42) {\large 3};
+
+    \node[anchor=south west] at (0, 0) {\includegraphics[height=35mm, trim={0 5.75cm 0 5.75cm}, clip]{img/leaf-texture.jpg}};
+    \node at (35, 24) {\includegraphics[height=19mm]{img/plant-res.png}};
+    \node[bar] at (35, 7) {\raisebox{2.5mm}{\LARGE 8} \raisebox{1mm}{\includegraphics[height=8mm]{img/plant-res.png}} \raisebox{2mm}{\includegraphics[height=6mm]{img/arrow.png}} \includegraphics[height=10mm]{img/greenery.png}};
+
+    \node[anchor=south west] at (70,0) {\includegraphics[height=35mm, trim={0 0 0 35.3cm}, clip]{img/plasma-texture.jpg}};
+    \node at (100, 24) {\includegraphics[height=19mm]{img/power.png}};
+
+    \node[anchor=south east] at (207,0) {\includegraphics[height=35mm, trim={0 0 0 0}, clip]{img/lava-texture.jpg}};
+    \node[anchor=south east] at (172,0) {\includegraphics[height=35mm, trim={0 0 0 0}, clip]{img/lava-texture.jpg}};
+    \node[anchor=south east] at (137,0) {\includegraphics[height=35mm, trim={30.5cm 0 0 0}, clip]{img/lava-texture.jpg}};
+    \node at (169.5, 24) {\includegraphics[height=19mm]{img/heat.png}};
+    \node[bar, opacity=0.6, text opacity=1] at (169.9, 7) {\raisebox{2.5mm}{\LARGE 8} \raisebox{1mm}{\includegraphics[height=8mm]{img/heat.png}} \raisebox{2mm}{\includegraphics[height=6mm]{img/arrow.png}} \includegraphics[height=9mm]{img/temperature.png}};
+
+    \draw[black] (0,35) -- (207,35)
+          (85,70) -- (85,35)
+          (70,35) -- (70,0)
+          (145,70) -- (145,35);
+    \draw[line width=2mm, black] (131, 0) -- (131, 17.5);
+
+    \matrix [table, anchor=north west] at (0, -10) {
+      \hspace{1.5mm}0 & \hspace{1.5mm}0 & \hspace{1.5mm}0 & \hspace{1.5mm}0 & \hspace{1.5mm}0 & \hspace{1.5mm}0 & \hspace{1.5mm}1 & \hspace{1.5mm}1 & \hspace{1.5mm}1 & \hspace{1.5mm}1 & \hspace{1.5mm}1 & \hspace{1.5mm}1 & \hspace{1.5mm}2 & \hspace{1.5mm}2 & \hspace{1.5mm}2 & \hspace{1.5mm}2 & \hspace{1.5mm}2 & \hspace{1.5mm}2 & \hspace{1.5mm}3 & \hspace{1.5mm}3 & \hspace{1.5mm}3 & \hspace{1.5mm}3 & \hspace{1.5mm}3 & \hspace{1.5mm}3 \\
+      \hspace{1.5mm}4 & \hspace{1.5mm}4 & \hspace{1.5mm}4 & \hspace{1.5mm}4 & \hspace{1.5mm}4 & \hspace{1.5mm}4 & \hspace{1.5mm}5 & \hspace{1.5mm}5 & \hspace{1.5mm}5 & \hspace{1.5mm}5 & \hspace{1.5mm}5 & \hspace{1.5mm}5 & \hspace{1.5mm}6 & \hspace{1.5mm}6 & \hspace{1.5mm}6 & \hspace{1.5mm}6 & \hspace{1.5mm}6 & \hspace{1.5mm}6 & \hspace{1.5mm}7 & \hspace{1.5mm}7 & \hspace{1.5mm}7 & \hspace{1.5mm}7 & \hspace{1.5mm}7 & \hspace{1.5mm}7 \\
+      \hspace{1.5mm}8 & \hspace{1.5mm}8 & \hspace{1.5mm}8 & \hspace{1.5mm}8 & \hspace{1.5mm}8 & \hspace{1.5mm}8 & \hspace{1.5mm}9 & \hspace{1.5mm}9 & \hspace{1.5mm}9 & \hspace{1.5mm}9 & \hspace{1.5mm}9 & \hspace{1.5mm}9 & \hspace{1.5mm}10 & \hspace{1.5mm}10 & \hspace{1.5mm}10 & \hspace{1.5mm}10 & \hspace{1.5mm}10 & \hspace{1.5mm}10 & \hspace{1.5mm}20 & \hspace{1.5mm}20 & \hspace{1.5mm}20 & \hspace{1.5mm}20 & \hspace{1.5mm}20 & \hspace{1.5mm}20 \\
+      \hspace{1mm}30 & \hspace{1mm}30 & \hspace{1mm}30 & \hspace{1mm}30 & \hspace{1mm}30 & \hspace{1mm}30 & \hspace{1mm}40 & \hspace{1mm}40 & \hspace{1mm}40 & \hspace{1mm}40 & \hspace{1mm}40 & \hspace{1mm}40 & \hspace{1mm}50 & \hspace{1mm}50 & \hspace{1mm}50 & \hspace{1mm}50 & \hspace{1mm}50 & \hspace{1mm}50 & \hspace{1.5mm}-1 & \hspace{1.5mm}-2 & \hspace{1.5mm}-3 & \hspace{1.5mm}-4 & \hspace{1mm}-5\\
+    };
+  \end{tikzpicture}
+\end{document}
